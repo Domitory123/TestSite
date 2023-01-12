@@ -6,7 +6,7 @@
   <hr/>
     <form action="/sendingNews" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
-          <label for="title">Назва123</label><br/>
+          <label for="title">Назва123123</label><br/>
           <input class="inputText" id="title" name="title" type="text"></input>
           <br/>
           <label for="conciseText">Скорочений  текст</label><br/>
