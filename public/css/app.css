@@ -1,0 +1,279 @@
+@charset "UTF-8";
+body {
+  background: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0;
+  font-family: "Serif", sans-serif;
+}
+
+.dolia {
+  background-color: rgb(255, 255, 255);
+  height: 1000px;
+  padding-top: 1%;
+  /* padding-left: 1%;   */
+}
+
+.center {
+  width: 70%;
+  margin: auto;
+}
+
+.menu {
+  /* list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0; */
+  margin-left: 10px;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  /* Для выравнивания меню по центру
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  */
+}
+
+.main-menu > li {
+  display: inline-flex;
+}
+
+.main-menu > li + li {
+  margin-left: 20px;
+}
+
+.main-menu > li > a {
+  padding: 0 0 20px 0;
+  position: relative;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.main-menu > li > a:hover {
+  text-decoration: none;
+  color: #337AB7;
+}
+
+.main-menu > li > a:after {
+  width: 0;
+  height: 3px;
+  background-color: #337AB7;
+  content: "";
+  left: 0;
+  bottom: 10px;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.main-menu > li > a:hover::after {
+  width: 100%;
+}
+
+.main-menu > li.active a:after {
+  width: 100%;
+}
+
+.main-menu li {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.main-menu ul {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  background-color: #337AB7;
+  position: absolute;
+  z-index: 20;
+  min-width: 220px;
+  top: 100%;
+  left: -30px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  transition: all 200ms cubic-bezier(0.43, 0.59, 0.16, 1.25);
+}
+
+.main-menu ul li {
+  display: block;
+  padding: 0 10px;
+  line-height: 1.1;
+}
+
+.main-menu ul li a {
+  display: block;
+  color: #fff;
+  padding: 10px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.main-menu ul li a:hover {
+  color: #337AB7;
+  background: #FFF;
+  text-decoration: none;
+}
+
+.main-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/* Слайдер: */
+.slider {
+  max-width: 100%;
+  /* Положение элемента устанавливается относительно его исходной позиции: */
+  position: relative;
+  /* Центрируем по горизонтали: */
+  margin: auto;
+  height: 50%;
+  /* overflow: hidden; */
+}
+
+/* Картинка масштабируется по отношению к родительскому элементу: */
+.slider .item img {
+  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 500px;
+}
+
+/* Кнопки назад и вперёд: */
+.slider .previous, .slider .next {
+  /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+  cursor: pointer;
+  /* Положение элемента задаётся относительно границ браузера: */
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  /* Оформление самих кнопок: */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  /* Плавное появление фона при наведении курсора: */
+  transition: 0.6s ease;
+  /* Скругление границ: */
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.slider .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* При наведении курсора на кнопки добавляем фон кнопок: */
+.slider .previous:hover,
+.slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Анимация слайдов: */
+.slider .item {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  /* Устанавливаем и изменяем степень прозрачности: */
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.newsblockBasis {
+  display: flex;
+}
+.newsblockBasis .left {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+.newsblockBasis .left .blockNews {
+  box-shadow: 0 0 5px;
+  width: 100%;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+.newsblockBasis .left .blockNews .photo {
+  width: 60%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.newsblockBasis .left .blockNews .text {
+  width: 40%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+.newsblockBasis .left .blockNews .text p {
+  font-size: 30px;
+}
+.newsblockBasis .right {
+  padding-left: 10px;
+  width: 30%;
+  height: auto;
+  background-color: rgb(155, 173, 165);
+  padding: 10px;
+}
+.newsblockBasis .right .sideBlockNews {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(59, 65, 58);
+}
+
+.sendingNews {
+  width: 40%;
+  margin: auto;
+  font-size: 30px;
+  background-color: rgb(171, 226, 228);
+  border-radius: 1%;
+  text-align: center;
+}
+.sendingNews .inputText {
+  font-size: 25px;
+}
+.sendingNews .inputfile {
+  font-size: 20px;
+  background-color: rgb(56, 210, 216);
+  border-radius: 1%;
+}
+.sendingNews .inputSubmit {
+  font-size: 20px;
+  background-color: rgb(254, 254, 255);
+  border-radius: 10%;
+}
+.sendingNews textarea {
+  font-size: 20px;
+}
+
+.bottomBlock {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(123, 235, 235);
+}
+
+.imgClass:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,40 @@
+body{
+
+    background: rgb(255, 255, 255);
+    padding: 0;
+    margin: 0;
+    font-family: 'Serif', sans-serif;
+}
+.dolia
+{
+    background-color: rgb(255, 255, 255); 
+    height: 1000px;  
+    padding-top: 1%;
+    /* padding-left: 1%;   */
+}
+
+.center
+{
+    width: 70%; 
+    margin: auto;
+}
+
+
+@import 'header';
+@import 'slider';
+@import 'newsblockBasis';
+@import 'addNews';
+
+.bottomBlock
+{
+  height: 100px;
+  width: 100%;
+  background-color: rgb(123, 235, 235);
+  
+}
+
+
+.imgClass:hover
+{
+    cursor: pointer;
+}
