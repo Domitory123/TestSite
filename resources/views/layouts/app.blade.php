@@ -52,8 +52,6 @@ function clickImg(elem)
 }
 
 
-// require('./bootstrap');
-
  /* Устанавливаем стартовый индекс слайда по умолчанию: */
  let slideIndex = 1;
 /* Вызываем функцию, которая реализована ниже: */
@@ -62,7 +60,7 @@ showSlides(slideIndex);
 /* Увеличиваем индекс на 1 — показываем следующий слайд: */
 function nextSlide() {
    
-    console.log("123123")
+    //console.log("1")
     showSlides(slideIndex += 1);
 }
 

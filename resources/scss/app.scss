@@ -25,7 +25,7 @@ body{
 @import 'newsblockBasis';
 @import 'addNews';
 @import 'adaptiveAddNews';
-
+@import 'newsOneblockBasis';
 
 .bottomBlock
 {
@@ -33,10 +33,4 @@ body{
   width: 100%;
   background-color: rgb(123, 235, 235);
   
-}
-
-
-.imgClass:hover
-{
-    cursor: pointer;
 }

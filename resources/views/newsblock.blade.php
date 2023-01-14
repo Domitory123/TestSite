@@ -10,12 +10,14 @@
                 <!-- <img style="while:auto;  height:100%;" src="{{ asset('/storage/' . $d->namePhoto) }}">  -->
                </div>
                    
-               <div class="text">
-                    <div style="padding: 3%; ">
+               <div  class="text">
+                    <div >
                         <p>{{$d->title}}</p>
                         <p>{{$d->text}}</p>
                     </div> 
-                    <a href="\newsblockOne\{{$d->id}}" >докладніше</a>
+                    <div  class="textAButton">
+                        <a class="aButton" href="\newsblockOne\{{$d->id}}" >докладніше&rarr;</a>
+                    </div>
                </div>
                
          </div>
