@@ -250,6 +250,7 @@ body {
   background-color: rgb(171, 226, 228);
   border-radius: 1%;
   text-align: center;
+  padding-top: 10px;
 }
 .sendingNews .inputText {
   font-size: 25px;
@@ -268,6 +269,60 @@ body {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 1380px) {
+  .sendingNews {
+    width: 50%;
+    margin: auto;
+    font-size: 30px;
+    background-color: rgb(171, 226, 228);
+    border-radius: 1%;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .sendingNews .inputText {
+    font-size: 25px;
+  }
+  .sendingNews .inputfile {
+    font-size: 20px;
+    background-color: rgb(35, 172, 177);
+    border-radius: 1%;
+  }
+  .sendingNews .inputSubmit {
+    font-size: 20px;
+    background-color: rgb(254, 254, 255);
+    border-radius: 10%;
+  }
+  .sendingNews textarea {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 1116px) {
+  .sendingNews {
+    width: 98%;
+    margin: auto;
+    font-size: 20px;
+    background-color: rgb(171, 226, 228);
+    border-radius: 1%;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .sendingNews .inputText {
+    font-size: 20x;
+  }
+  .sendingNews .inputfile {
+    font-size: 15px;
+    background-color: rgb(35, 172, 177);
+    border-radius: 1%;
+  }
+  .sendingNews .inputSubmit {
+    font-size: 20px;
+    background-color: rgb(254, 254, 255);
+    border-radius: 10%;
+  }
+  .sendingNews textarea {
+    font-size: 17px;
+  }
+}
 .bottomBlock {
   height: 100px;
   width: 100%;

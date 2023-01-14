@@ -1,0 +1,78 @@
+@media only screen and (max-width: 1380px)
+{
+  
+  .sendingNews
+  {
+      width: 50%; 
+      margin: auto;
+      font-size: 30px;
+      background-color: rgb(171, 226, 228);
+      // padding-left: 1%;
+      border-radius: 1%;
+      text-align: center;
+      padding-top: 10px;
+     .inputText
+     {
+       font-size: 25px;
+     }
+  
+     .inputfile
+     {
+       font-size: 20px;
+       background-color: rgb(35, 172, 177);
+       border-radius: 1%;
+  
+     }
+      .inputSubmit
+      {
+          font-size: 20px;
+          background-color: rgb(254, 254, 255);
+          border-radius: 10%;
+          
+      }
+      textarea
+      {
+          font-size: 10px;
+      }
+  }
+
+}
+@media only screen and (max-width: 1116px)
+{
+  
+  .sendingNews
+  {
+      width: 98%; 
+      margin: auto;
+      font-size: 20px;
+      background-color: rgb(171, 226, 228);
+      // padding-left: 1%;
+      border-radius: 1%;
+      text-align: center;
+      padding-top: 20px;
+     .inputText
+     {
+       font-size: 20x;
+     }
+  
+     .inputfile
+     {
+       font-size: 15px;
+       background-color: rgb(35, 172, 177);
+       border-radius: 1%;
+  
+     }
+      .inputSubmit
+      {
+          font-size: 20px;
+          background-color: rgb(254, 254, 255);
+          border-radius: 10%;
+          
+      }
+      textarea
+      {
+          font-size: 17px;
+      }
+  }
+
+}

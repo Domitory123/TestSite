@@ -2,22 +2,22 @@
 
 @section('sendingNews')
 <div class="sendingNews">
-  <h1>Відправте нам новину</h1>
+  <h3>Відправте нам новину</h3>
   <hr/>
     <form action="/sendingNews" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
-          <label for="title">Назва123123</label><br/>
+          <label for="title">Назва</label><br/>
           <input class="inputText" id="title" name="title" type="text"></input>
           <br/>
           <label for="conciseText">Скорочений  текст</label><br/>
-          <input class="inputText" id="conciseText" name="conciseText" type="text"></input>
-          <br/>
+          <textarea name="conciseText" cols="28"  rows="3" ></textarea> 
+          <!-- <input class="inputText" id="conciseText" name="conciseText" type="text"></input> -->
+          <br/>      
+          <!--  <input class="inputText" rows="15" cols="92" id="text" name="text" type="text"></input> 
+          <br/>-->
           <label for="text">Текст</label> <br/>
-         
-          <input class="inputText" rows="15" cols="92" id="text" name="text" type="text"></input> 
-         
+          <textarea name="text" cols="28"  rows="5" ></textarea> <br/>
 
-          <textarea id="wmd-input" name="post-text" cols="28"  rows="5" ></textarea> <br/>
           <label for="fileMain">Вибір головної фотографії</label> <br/>
           <input  class="inputfile" id="fileMain" name="fileMain" type="file"></input>
           <br/>
