@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\News;
-
-class HomeController extends Controller
+class MerchController extends Controller
 {
      public function submit()
      {
-       return view('newsblock',['data'=>News::all()]);
+       return view('allMerch');
+
      }
      public function submitOne($id)
      {

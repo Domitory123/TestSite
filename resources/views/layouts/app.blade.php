@@ -27,8 +27,8 @@
                 @yield('newsblock') 
                 @yield('contentWelcom')               
                 @yield('sendingNews') 
-
-
+                @yield('allMerch') 
+              
                <!-- @yield('contentSlider')  -->
                <!-- @yield('content')  -->
             

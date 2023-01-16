@@ -31,6 +31,9 @@ Route::get('/sendingNews', function () {
 });
 
 Route::get('/newsblockOne/{id}','App\Http\Controllers\HomeController@submitOne');
+
+Route::get('/allMerch', 'App\Http\Controllers\MerchController@submit');
+
 Route::post('/','App\Http\Controllers\FormController@submit');
 Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit');
 

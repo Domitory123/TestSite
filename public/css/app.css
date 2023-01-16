@@ -8,8 +8,7 @@ body {
 
 .dolia {
   background-color: rgb(255, 255, 255);
-  height: 1000px;
-  padding-top: 1%;
+  height: auto;
   /* padding-left: 1%;   */
 }
 
@@ -345,6 +344,9 @@ body {
 .blockOneNews .imgClass {
   height: 100px;
 }
+.blockOneNews .text {
+  font-size: 20px;
+}
 .blockOneNews .imgClass:hover {
   cursor: pointer;
 }
@@ -355,6 +357,33 @@ body {
   font-size: 20px;
   border-radius: 5px;
   color: black;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+.container .blokMerch {
+  background-color: rgb(154, 205, 214);
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  margin: 1%;
+  box-shadow: 0 0 5px;
+}
+.container .blokMerch .photo {
+  width: 300px;
+  height: 300px;
+}
+.container .blokMerch .text {
+  padding: 2%;
+  font-size: 20px;
+}
+.container .blokMerch:hover {
+  box-shadow: 0 0 0px;
 }
 
 .bottomBlock {
