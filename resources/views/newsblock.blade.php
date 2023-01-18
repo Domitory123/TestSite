@@ -28,8 +28,8 @@
  
     <div class="right">
          <div class="sideBlockNews">
-
-         </div>
+                <p>новосний блок</p>
+           </div>
     </div>
 </div>
 @endsection

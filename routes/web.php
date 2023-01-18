@@ -29,10 +29,15 @@ Route::get('/', 'App\Http\Controllers\HomeController@submit');
 Route::get('/sendingNews', function () {
     return view('sendingNews');
 });
+Route::get('/addMerch', function () {
+    return view('addMerch');
+});
 
 Route::get('/newsblockOne/{id}','App\Http\Controllers\HomeController@submitOne');
 
-Route::get('/allMerch', 'App\Http\Controllers\MerchController@submit');
+Route::get('/showMerch', 'App\Http\Controllers\MerchController@showMerch');
+
+Route::post('/addMerch','App\Http\Controllers\MerchController@addMerch');
 
 Route::post('/','App\Http\Controllers\FormController@submit');
 Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit');

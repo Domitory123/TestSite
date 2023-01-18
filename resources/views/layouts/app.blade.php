@@ -22,13 +22,13 @@
                     @include("inc.slider")               
                 @endif
             
-              
                 @yield('newsblockOne') 
                 @yield('newsblock') 
                 @yield('contentWelcom')               
                 @yield('sendingNews') 
-                @yield('allMerch') 
-              
+                @yield('showMerch') 
+                @yield('addMerch') 
+               
                <!-- @yield('contentSlider')  -->
                <!-- @yield('content')  -->
             

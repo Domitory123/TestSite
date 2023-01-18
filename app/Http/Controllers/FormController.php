@@ -8,7 +8,7 @@ class FormController extends Controller
 {
      public function submit(Request $request)
      {
-      dd($request->input('name')); 
+        dd($request->input('name')); 
       
      }
 
