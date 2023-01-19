@@ -368,7 +368,7 @@ body {
   margin-bottom: 100px;
 }
 .container .blokMerch {
-  background-color: rgb(154, 205, 214);
+  background-color: rgb(255, 255, 255);
   width: 300px;
   height: 400px;
   border-radius: 10px;
@@ -381,7 +381,10 @@ body {
 }
 .container .blokMerch .text {
   padding: 2%;
-  font-size: 20px;
+  font-size: 30px;
+}
+.container .blokMerch .text p {
+  font-size: 30px;
 }
 .container .blokMerch:hover {
   box-shadow: 0 0 15px rgb(34, 34, 34);

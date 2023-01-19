@@ -14,34 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
  Route::get('/welcome', function () {
      return view('welcome');
  });
- //Route::get('/', function () {
- //   return view('show');
-//});
 
 Route::get('/', 'App\Http\Controllers\HomeController@submit');
 
 Route::get('/sendingNews', function () {
     return view('sendingNews');
 });
-Route::get('/addMerch', function () {
-    return view('addMerch');
+Route::get('/merch/addMerch', function () {
+    return view('/merch/addMerch');
 });
 
+Route::get('/merch/buyMerch/{id}','App\Http\Controllers\MerchController@buyMerch');
+Route::get('/merch/merchOne/{id}','App\Http\Controllers\MerchController@showMerchOne');
+Route::get('/merch/deleteMerch/{id}','App\Http\Controllers\MerchController@deleteMerch');
+Route::get('/merch/delete/{id}','App\Http\Controllers\MerchController@delete');
+Route::get('/merch/showMerch', 'App\Http\Controllers\MerchController@showMerch');
+Route::post('/merch/addMerch','App\Http\Controllers\MerchController@addMerch');
+
+
+
+
 Route::get('/newsblockOne/{id}','App\Http\Controllers\HomeController@submitOne');
-
-Route::get('/showMerch', 'App\Http\Controllers\MerchController@showMerch');
-
-Route::post('/addMerch','App\Http\Controllers\MerchController@addMerch');
-
 Route::post('/','App\Http\Controllers\FormController@submit');
 Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit');
-
 
 
   //  return Request::all();

@@ -3,11 +3,11 @@
     <ul class="main-menu">
         <li class="active"> <a href="/">Головна</a></li>
         <li ><a href="\welcome">Новини</a></li>
-        <li><a href="\showMerch">мерч&#11088;</a></li>
+        <li><a href="\merch\showMerch">мерч&#11088;</a></li>
         <li><a href="#url">Фотогалерея</a></li>
         <li><a href="#url">Контакти</a></li>   
         <li><a href="\sendingNews">У вас є новина? Напиши нам</a></li>   
-        <li><a href="\addMerch">добавлення мерчу</a></li>   
+        <li><a href="\merch\addMerch">добавлення мерчу</a></li>   
     </ul>  
 </div>
 

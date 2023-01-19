@@ -28,14 +28,13 @@
                 @yield('sendingNews') 
                 @yield('showMerch') 
                 @yield('addMerch') 
-               
+                @yield('buyMerch') 
+              
                <!-- @yield('contentSlider')  -->
                <!-- @yield('content')  -->
             
                <!--   @include("inc.tesrSection") -->
-             
-    
-            
+               
         </div>           
         @include("inc.bottom")
     </div>   

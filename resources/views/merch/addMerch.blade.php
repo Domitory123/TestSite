@@ -4,7 +4,7 @@
 <div class="sendingNews">
   <h3>добавлення товару</h3>
   <hr/>
-    <form action="/addMerch" method="post" enctype="multipart/form-data">
+    <form action="/merch/addMerch" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
           <label for="title">Назва</label><br/>
           <input class="inputText" id="title" name="title" type="text"></input>
