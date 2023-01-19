@@ -25,11 +25,6 @@ class MerchController extends Controller
 
     public function showMerch()
     {
-     // unlink('uploads/JeErk2hsbKAp75p1lWencEqPnYyaHiyZZt1QeMsP.jpg');
-     // Storage::delete(public_path('uploads/JeErk2hsbKAp75p1lWencEqPnYyaHiyZZt1QeMsP.jpg'));
-     // unlink(asset('\storage\uploads\JeErk2hsbKAp75p1lWencEqPnYyaHiyZZt1QeMsP.jpg'));
-      //unlink(public_path('uploads\JeErk2hsbKAp75p1lWencEqPnYyaHiyZZt1QeMsP.jpg'));
-    //  app(Illuminate\Filesystem\Filesystem::class)->delete(public_path('uploads/JeErk2hsbKAp75p1lWencEqPnYyaHiyZZt1QeMsP.jpg'));
       return view('merch\showMerch',['Merch'=>Merch::all()]);
     }
      public function buyMerch($id)
@@ -47,12 +42,13 @@ class MerchController extends Controller
      }
      public function delete($id)
      {
-     // $data->nameMainPhoto 
-     // $data->namePhoto1
-     // $data->namePhoto2 
-      $merch = Merch::find($id);
-     
-       //dd( $merch->nameMainPhoto );
+
+        $merch = Merch::find($id);
+      //  dd('/storage'.'/'.$merch->nameMainPhoto);
+        unlink(public_path('/storage'.'/'.$merch->nameMainPhoto));
+        unlink(public_path('/storage'.'/'.$merch->namePhoto1));
+        unlink(public_path('/storage'.'/'.$merch->namePhoto2));
+
        Merch::find($id)->delete();
        //Merch::find($id)->delete();
        return view('merch\showMerch',['Merch'=>Merch::all()]);
