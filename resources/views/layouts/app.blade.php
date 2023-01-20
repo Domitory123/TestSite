@@ -29,7 +29,8 @@
                 @yield('showMerch') 
                 @yield('addMerch') 
                 @yield('buyMerch') 
-              
+                @yield('updateMerch') 
+               
                <!-- @yield('contentSlider')  -->
                <!-- @yield('content')  -->
             
