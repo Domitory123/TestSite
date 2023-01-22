@@ -4,7 +4,7 @@
        <!-- 1 слайд -->
         <div class="item">
        
-             <img src="https://kartinkin.net/uploads/posts/2021-07/1626956579_15-kartinkin-com-p-kholodnii-sinii-fon-krasivo-15.jpg ">       
+             <img src="/img/2.png">       
         </div>
         <!-- 2 слайд -->
         <div class="item">

@@ -12,15 +12,15 @@
           <label for="describe">Опис</label> <br/>
           <textarea   name="describe" cols="28"  rows="5" >{{$Merch->describe}}</textarea> <br/>
           <label for="fileMain">Вибір головної фотографії</label> <br/>
-          <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'.$Merch->nameMainPhoto) }}">  
+          <img style=" height: 200px" src="{{ asset('/storage/'.$Merch->nameMainPhoto) }}">  
           <input  class="inputfile" id="fileMain" name="fileMain" type="file"></input>
           <br/>
           <label for="file1">Вибір  фото 1</label> <br/>
-          <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'.$Merch->namePhoto1) }}"> 
+          <img style=" height: 200px" src="{{ asset('/storage/'.$Merch->namePhoto1) }}"> 
           <input class="inputfile" id="file1" name="file1" type="file"></input>
           <br/>
           <label for="file2">Вибір  фото 2</label> <br/>
-          <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $Merch->namePhoto2) }}">
+          <img style=" height: 200px" src="{{ asset('/storage/'. $Merch->namePhoto2) }}">
           <input class="inputfile" Value="{{$Merch->nameMainPhoto}}" id="file2" name="file2" type="file"></input>
           <br/> <br/>
           <input  class="inputSubmit" type="submit" value="оновити" > </input>

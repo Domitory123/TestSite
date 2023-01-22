@@ -4,8 +4,6 @@
 
   <div class="blockOneNews">
    
-   
-    
                </div>  
                <a href="\" >назад</a>
                <a href="\" >купити</a>
