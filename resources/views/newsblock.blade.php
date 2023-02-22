@@ -11,7 +11,7 @@
                </div>
                    
                <div  class="text">
-                    <div >
+                    <div class="textP">
                         <p>{{$d->title}}</p>
                         <p>{{$d->text}}</p>
                     </div> 

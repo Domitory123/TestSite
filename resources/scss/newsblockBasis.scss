@@ -28,19 +28,23 @@
         .text{
           width: 40%;
           height: 100%;
+         // height: 300px;
           background-color: rgb(255, 255, 255); 
-        
-          p{
-            //text-align: center;
-            font-size: 30px;
+          .textP{
+            height: 85%;
+            p{
+              //text-align: center;
+              font-size: 30px;
+            }
           }
           .textAButton
           {
+            
             text-align: right;
             margin-right: 1%;
             a
             {
-               background-color: rgb(109, 176, 227);
+               background-color: rgb(181, 184, 187);
                text-decoration: none;
                padding: 2%;
                font-size: 20px;
@@ -48,11 +52,8 @@
                color: black;
             }
           }
-        
-
-        
         }
-
+      
     }
   }
   .right{

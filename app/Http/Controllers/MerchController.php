@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Merch;
+use App\Models\Order;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 class MerchController extends Controller
@@ -28,9 +29,39 @@ class MerchController extends Controller
       return view('merch\showMerch',['Merch'=>Merch::all()]);
     }
      public function buyMerch($id)
-     {
-       return view('merch\buyMerch');
+     {     
+       return view('merch\buyMerch',['data'=>Merch::find($id)]);
+
+       //return view('merch\buyMerch');
      }
+     public function buyMerchOrder(Request $request)
+      {
+
+        // dd($request->input('id'));
+         $order = new Order();
+        
+        //  $table->bigInteger("idMerch");
+        //  $table->string('nameUser');
+        //  $table->string('email')->unique();
+        //  $table->string('deliveryAddress')->unique();
+        //  $table->string('phoneNumber')->unique();
+        //  $table->string('comment')->unique();
+        //  $table->string('status')->unique(); 
+
+           $str= $request->input('idMerch');
+           $order->merch_id=   (int)$str;
+           $order->nameUser= $request->input('nameUser');
+           $order->email = $request->input('email');
+           $order->deliveryAddress= $request->input('deliveryAddress');
+           $order->comment= $request->input('comment');
+           $order->phoneNumber= $request->input('phoneNumber');
+           $order->status="оформлення";
+           $order->save();
+
+         return view('merch\showMerch',['Merch'=>Merch::all()]);
+
+      }
+
      public function showMerchOne($id)
      {
         return view('merch\merchOne',['data'=>Merch::find($id)]);

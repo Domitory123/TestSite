@@ -2,16 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\News;
 
 class HomeController extends Controller
 {
-     public function submit()
-     {
-       return view('newsblock',['data'=>News::all()]);
-     }
-     public function submitOne($id)
-     {
-        return view('newsblockOne',['data'=>News::find($id)]);
-     }
+
+    /**
+     * Create a new controller instance.
+     *
+     * 
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    public function index()
+    {
+        return view('home');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    
+    
 }

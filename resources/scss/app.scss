@@ -3,12 +3,15 @@ body{
     background-image: url('/img/2.png'); 
     padding: 0;
     margin: 0;
+     background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: 'Serif', sans-serif;
 }
 .dolia
 {
     background-color: rgb(255, 255, 255); 
-    height: auto;
+  //  height: auto;
+  min-height: 100vh;
     /* padding-left: 1%;   */
 }
 
@@ -26,13 +29,28 @@ body{
 @import 'adaptiveAddNews';
 @import 'newsOneblockBasis';
 @import 'blokMerch';
+@import 'showOrders';
+
+.MyContainer
+{
+    min-height: 100vh;
+
+}
 
 
 .bottomBlock
 {
   height: 100px;
   width: 100%;
-  background-color: rgb(123, 235, 235);
+  background-color: rgb(187, 187, 187);
 }
 
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

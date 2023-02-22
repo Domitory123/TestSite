@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yiDocument</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/app.css">
-
 </head>
-    <body>
-
+<body>
+  
     <div class="center">
         <div class="dolia">
             @include("inc.header")
@@ -17,11 +31,11 @@
             <div class="line"> 
                 <hr/>
             </div>
-         
+              
                 @if(Request::is('/'))
                     @include("inc.slider")               
                 @endif
-            
+             
                 @yield('newsblockOne') 
                 @yield('newsblock') 
                 @yield('contentWelcom')               
@@ -31,17 +45,19 @@
                 @yield('buyMerch') 
                 @yield('updateMerch') 
                
+                @yield('content')
+      
+            
                <!-- @yield('contentSlider')  -->
                <!-- @yield('content')  -->
-            
                <!--   @include("inc.tesrSection") -->
                
         </div>           
         @include("inc.bottom")
     </div>   
-   
 
-        <!-- src="/js/app.js"    -->
+
+<!-- src="/js/app.js"    -->
 <script  >  
 
 
@@ -95,6 +111,47 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";    
   }
 
+
+// try {
+//     require('bootstrap');
+// } catch (e) {}
+
+// /**
+//  * We'll load the axios HTTP library which allows us to easily issue requests
+//  * to our Laravel back-end. This library automatically handles sending the
+//  * CSRF token as a header based on the value of the "XSRF" token cookie.
+//  */
+
+// window.axios = require('axios');
+
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+// /**
+//  * Echo exposes an expressive API for subscribing to channels and listening
+//  * for events that are broadcast by Laravel. Echo and event broadcasting
+//  * allows your team to easily build robust real-time web applications.
+//  */
+
+//  import Echo from 'laravel-echo';
+
+//  window.Pusher = require('pusher-js');
+
+//  window.Echo = new Echo({
+//      broadcaster: 'pusher',
+//      key: process.env.MIX_PUSHER_APP_KEY,
+//      cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//      forceTLS: true
+//  });
+
+
+
+
+
+
+
+
 </script>   
-    </body>
+
+
+</body>
 </html>

@@ -2,7 +2,8 @@
 
 @section('updateMerch')
 <div class="sendingNews">
-  <h3>редагування товару</h3>
+  <h3>редагування товару  </h3>
+  
   <hr/>
     <form action="/merch/updateMerch/{{$Merch->id}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
@@ -27,5 +28,9 @@
     </form>
     <br/> 
 </div> 
+
+
+
+  
 
 @endsection
