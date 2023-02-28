@@ -23,6 +23,8 @@ class CreateMerchesTable extends Migration
 
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
   

@@ -32,21 +32,30 @@ Route::get('/merch/addMerch', function ()
         return view('welcome');
 });
 
-Route::get('/merch/buyMerch/{id}','App\Http\Controllers\MerchController@buyMerch');
-Route::get('/merch/merchOne/{id}','App\Http\Controllers\MerchController@showMerchOne');
-Route::get('/merch/deleteMerch/{id}','App\Http\Controllers\MerchController@deleteMerch');
-Route::get('/merch/delete/{id}','App\Http\Controllers\MerchController@delete');
-Route::get('/merch/showMerch', 'App\Http\Controllers\MerchController@showMerch');
-Route::post('/merch/addMerch','App\Http\Controllers\MerchController@addMerch');
-Route::get('/merch/updateMerch/{id}','App\Http\Controllers\MerchController@updateMerch');
-Route::post('/merch/updateMerch/{id}','App\Http\Controllers\MerchController@update');
-Route::post('/buyMerch','App\Http\Controllers\MerchController@buyMerchOrder');
+
+
+Route::group(['namespace'=>'App\Http\Controllers\Merch'],function (){
+  Route::get('/merch/showMerch', 'ShowMerchController');
+  Route::get('/merch/buyMerch/{id}','BuyMerchController');
+  Route::post('/merch/addMerch','AddMerchController');
+  Route::get('/merch/merchOne/{id}','ShowOneMerchController');
+
+  Route::get('/merch/delete/{id}','DeleteMerchController');
+  Route::get('/merch/deleteMerch/{id}','ShowDeleteMerchController');
+
+  Route::get('/merch/updateMerch/{id}','ShowUpdateMerchController');
+  Route::post('/merch/updateMerch/{id}','UpdateMerchController');
+  
+  Route::post('/buyMerch','BuyMerchOrderController');
+});
+
+
+
+
 
 
 Route::get('/admin/admin', 'App\Http\Controllers\AdminController@submit');
 Route::get('/admin/adminOrder', 'App\Http\Controllers\AdminController@adminOrder');
-
-
 
 Route::get('/newsblockOne/{id}','App\Http\Controllers\NewsController@submitOne');
 

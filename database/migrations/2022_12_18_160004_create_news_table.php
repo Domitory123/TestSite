@@ -23,7 +23,7 @@ class CreateNewsTable extends Migration
             $table->string("namePhoto2");
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
-            
+            $table->softDeletes();
         });
     }
 

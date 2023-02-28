@@ -14,6 +14,8 @@
            </div>
        </div>
    @endforeach 
+  
 </div>
 
+<div>{{$Merch->links()}}</div>
 @endsection

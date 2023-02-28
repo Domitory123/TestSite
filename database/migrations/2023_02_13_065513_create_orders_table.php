@@ -24,9 +24,13 @@ class CreateOrdersTable extends Migration
             $table->string('status');
             $table->timestamps();
 
-            $table->bigInteger("merch_id")->nullable();
-            $table->index("merch_id","orders_merch_idx");
-            $table->foreign("merch_id","orders_merch_fk")->on("merches")->references("id");
+            $table->bigInteger("merch_id");
+
+            $table->softDeletes();
+           // $table->bigInteger("merch_id")->nullable();
+           // $table->index("merch_id","orders_merch_idx");
+           // $table->foreign("merch_id","orders_merch_fk")->on("merches")->references("id");
+
 
         });
     }
