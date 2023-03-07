@@ -17,5 +17,5 @@
   
 </div>
 
-<div>{{$Merch->links()}}</div>
+<div>{{$Merch->withQueryString()->links()}}</div>
 @endsection

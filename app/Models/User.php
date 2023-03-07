@@ -12,12 +12,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function admin()
-    {
-       dd(Authenticatable::use);
-     // return view('merch\showMerch',['Merch'=>Merch::all()]);
-    }
-
     /**
      * The attributes that are mass assignable.
      *

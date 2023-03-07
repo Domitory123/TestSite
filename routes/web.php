@@ -35,21 +35,26 @@ Route::get('/merch/addMerch', function ()
 
 
 Route::group(['namespace'=>'App\Http\Controllers\Merch'],function (){
+  
   Route::get('/merch/showMerch', 'ShowMerchController');
   Route::get('/merch/buyMerch/{id}','BuyMerchController');
-  Route::post('/merch/addMerch','AddMerchController');
+  
   Route::get('/merch/merchOne/{id}','ShowOneMerchController');
+  Route::post('/buyMerch','BuyMerchOrderController');
+
+});
+
+Route::group(['namespace'=>'App\Http\Controllers\Merch','middleware'=>'admin' ],function (){
+
+  Route::post('/merch/addMerch','AddMerchController');
 
   Route::get('/merch/delete/{id}','DeleteMerchController');
   Route::get('/merch/deleteMerch/{id}','ShowDeleteMerchController');
 
   Route::get('/merch/updateMerch/{id}','ShowUpdateMerchController');
   Route::post('/merch/updateMerch/{id}','UpdateMerchController');
-  
-  Route::post('/buyMerch','BuyMerchOrderController');
+
 });
-
-
 
 
 
