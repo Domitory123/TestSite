@@ -10,7 +10,7 @@
      <img style=" height: 200px" src="{{ asset('/storage/'. $data->nameMainPhoto) }}"> 
     </div> 
   <hr/>
-    <form action="/buyMerch" method="post" enctype="multipart/form-data">
+    <form action="{{ route('merch.order') }}"  method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
 
           <label for="nameUser"> Ім'я та фамілія отримувача</label><br/>

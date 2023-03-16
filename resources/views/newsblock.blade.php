@@ -16,10 +16,9 @@
                         <p>{{$d->text}}</p>
                     </div> 
                     <div  class="textAButton">
-                        <a class="aButton" href="\newsblockOne\{{$d->id}}" >докладніше&rarr;</a>
+                        <a class="aButton" href="{{ route('newsBlockOne', $d->id)}}" >докладніше&rarr;</a>
                     </div>
-               </div>
-               
+               </div>  
          </div>
         
        <br/> 

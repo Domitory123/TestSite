@@ -13,16 +13,8 @@ class AdminController extends Controller
      }
      public function  adminOrder()
      {
-        //$order = new Order();
-      //  $order =  Order::find(1);
-       // $order =  Order::all();
-       // dd($order->merch->id);
-
-        return view('admin\adminOrder',['Order'=>Order::all()]);
-           
+        return view('admin\adminOrder',['Order'=>Order::all()]);         
      }
-
-    
 
 
 }

@@ -2,15 +2,16 @@
 <div class="menu">
     <ul class="main-menu">
         <li class="active"> <a href="\">Головна</a></li>
-        <li ><a href="\welcome">Новини</a></li>
-        <li><a href="\merch\showMerch">мерч&#11088;</a></li>
+        <li><a href="{{ route('welcome') }}">Новини</a></li>
+        <li><a href="{{ route('merch.index') }}">мерч&#11088;</a></li>
         <li><a href="#url">Фотогалерея</a></li>
         <li><a href="#url">Контакти</a></li>   
-        <li><a href="\admin\admin">Адмінка</a></li>
+       
 
       @if (Auth::user()!=null && Auth::user()->admin)
-      <li><a href="\sendingNews">добавлення новини</a></li>
-      <li ><a href="\merch\addMerch">добавлення мерчу</a></li>   
+      <li><a href="{{ route('admin') }}">Адмінка</a></li>
+      <li><a  href="{{ route('sendingNews') }}">добавлення новини</a></li>
+      <li ><a  href="{{ route('merch.create') }}">добавлення мерчу</a></li>  
       @endif
 
         @guest

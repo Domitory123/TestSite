@@ -18,11 +18,11 @@
                   
                </div>  
                   <a href="\" >назад</a>
-                  <a href="\merch\buyMerch\{{$data->id}}">купити</a>
+                  <a href="{{route('merch.buy',$data->id)}}" >купити</a>
 
                   @can('view',auth()->user()) 
-                     <a href="\merch\deleteMerch\{{$data->id}}">видалити</a>
-                     <a href="\merch\updateMerch\{{$data->id}}">редагувати</a>   
+                     <a href="{{route('merchPage.destroy',$data->id)}}">видалити</a>
+                     <a href="{{route('merch.edit',$data->id)}}">редагувати</a>                    
                   @endcan        
                </div>
      

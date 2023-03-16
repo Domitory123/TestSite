@@ -2,7 +2,10 @@
 
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Merch;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MerchController;
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,65 +17,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-     return view('welcome');
+Route::get('/welcome', function ()
+{return view('welcome');})->name('welcome');
+
+Route::get('/sendingNews', function ()
+{ return view('sendingNews');})->name('sendingNews');
+
+Route::controller(MerchController::class)->group(function () {
+
+  Route::get('/merch/index','index')->name('merch.index');
+  Route::get('/merch/show/{id}','show')->name('merch.show');
+  Route::get('/merch/buyMerch/{id}','buy')->name('merch.buy');
+  Route::post('/merch/buyMerch','order')->name('merch.order');
+
  });
 
-Route::get('/', 'App\Http\Controllers\NewsController@submit');
+Route::controller(MerchController::class)->middleware(['admin'])->group(function () {
 
-Route::get('/sendingNews', function () {
-    return view('sendingNews');
-});
-
-Route::get('/merch/addMerch', function ()
- {
-    if (Auth::user()!=null && Auth::user()->admin)
-        return view('/merch/addMerch');
-     else
-        return view('welcome');
-});
-
-
-
-Route::group(['namespace'=>'App\Http\Controllers\Merch'],function (){
+  Route::get('/merch/create', function ()
+  {return view('/merch/create');})->name('merch.create');
+  Route::post('/merch','store')->name('merch.store'); 
   
-  Route::get('/merch/showMerch', 'ShowMerchController');
-  Route::get('/merch/buyMerch/{id}','BuyMerchController');
+  Route::get('/merch/showDestroy/{id}','showDestroy')->name('merchPage.destroy');
+  Route::get('/merch/destroy/{id}','destroy')->name('merch.destroy');
   
-  Route::get('/merch/merchOne/{id}','ShowOneMerchController');
-  Route::post('/buyMerch','BuyMerchOrderController');
-
+  Route::get('/merch/edit/{id}','edit')->name('merch.edit');
+  Route::post('/merch/update/{id}','update')->name('merch.update');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers\Merch','middleware'=>'admin' ],function (){
+Route::controller(AdminController::class)->middleware(['admin'])->group(function () {
+  Route::get('/admin/admin', 'submit')->name('admin');
+  Route::get('/admin/adminOrder', 'adminOrder')->name('adminOrder');
+ });
 
-  Route::post('/merch/addMerch','AddMerchController');
 
-  Route::get('/merch/delete/{id}','DeleteMerchController');
-  Route::get('/merch/deleteMerch/{id}','ShowDeleteMerchController');
-
-  Route::get('/merch/updateMerch/{id}','ShowUpdateMerchController');
-  Route::post('/merch/updateMerch/{id}','UpdateMerchController');
-
+ 
+Route::controller(NewsController::class)->group(function () {
+  Route::get('/','submit');
+  Route::get('/newsBlockOne/{id}','submitOne')->name('newsBlockOne');
 });
 
-
-
-
-Route::get('/admin/admin', 'App\Http\Controllers\AdminController@submit');
-Route::get('/admin/adminOrder', 'App\Http\Controllers\AdminController@adminOrder');
-
-Route::get('/newsblockOne/{id}','App\Http\Controllers\NewsController@submitOne');
-
-Route::post('/main','App\Http\Controllers\FormController@submit');
-Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit');
-
-
-
-  //  return Request::all();
-
-Auth::routes();
+Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit')->name('sendingNews');;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Auth::routes();
 

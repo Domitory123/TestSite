@@ -8,9 +8,9 @@
                 <div class="card-header">{{ __('Admin2!') }}</div>
 
                 <div class="card-body">    
-                    <a href="\admin\adminOrder">Замовлення</a>
-                    <a href="\admin\admin">Мерч</a>
-                    <a href="\admin\admin">Новини</a>
+                    <a href="{{ route('adminOrder') }}">Замовлення</a>
+                    <a href="{{ route('admin') }}">Мерч</a>
+                    <a href="{{ route('admin') }}">Новини</a>
                 </div>
 
             </div>

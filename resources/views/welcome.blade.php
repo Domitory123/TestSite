@@ -10,7 +10,7 @@
 
     @if (Auth::user()->admin)
 
-    <h3>редагування товару1  {{ __('Name') }}  </h3>
+    <h3>редагування товару123  {{ __('Name') }}  </h3>
     <h3>редагування товару1  {{ Auth::user()->name }}  </h3>
       <form action="/" method="post">
       {{ csrf_field() }}	

@@ -9,7 +9,7 @@ class ShowMerchController extends Controller
 {
     public function __invoke(FilterRequest $request)
     {
-
+      
       $data =  $request->validated();
       $filter=  app()->make(MerchFilter::class,['queryParams'=>array_filter($data)]);
 

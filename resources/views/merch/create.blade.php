@@ -4,7 +4,7 @@
 <div class="sendingNews">
   <h3>добавлення товару</h3>
   <hr/>
-    <form action="/merch/addMerch" method="post" enctype="multipart/form-data">
+    <form action="{{ route('merch.store') }}"   method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
           <label for="title">Назва</label><br/>
           <input class="inputText" id="title" name="title" type="text" value="{{old('title')}}"></input>
@@ -30,7 +30,7 @@
           @endif
 
           <label for="namePhoto1">Вибір  фото 1</label> <br/>
-          <input class="inputfile" id="namePhoto1" name="namePhoto1" type="namePhoto1"></input>
+          <input class="inputfile" id="namePhoto1" name="namePhoto1" type="file"></input>
             @error('namePhoto1')
             <br/>
            <span class="text-danger">{{$message}}</span>
@@ -38,7 +38,7 @@
            <br/>
            
           <label for="namePhoto2">Вибір  фото 2</label> <br/>
-          <input class="inputfile" id="namePhoto2" name="namePhoto2" type="namePhoto2"></input>
+          <input class="inputfile" id="namePhoto2" name="namePhoto2" type="file"></input>
           <br/>
           @error('namePhoto2')
            <span class="text-danger" >{{$message}}</span>

@@ -11,6 +11,7 @@ class Order extends Model
 
    public function merch()
    {
-       return $this->belongsTo(Merch::class,'merch_id','id');
+       return $this->hasMany(Merch::class,'merch_id','id');
+      // return $this->belongsTo(Merch::class,'merch_id','id');
    }
 } 

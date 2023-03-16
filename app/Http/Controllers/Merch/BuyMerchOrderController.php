@@ -23,7 +23,7 @@ class BuyMerchOrderController extends Controller
              $order->status="оформлення";
              $order->save();
   
-           return view('merch\showMerch',['Merch'=>Merch::all()]);
+          return view('merch\showMerch',['Merch'=>Merch::all()]);
    
     } 
 }

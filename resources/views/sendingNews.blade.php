@@ -4,7 +4,7 @@
 <div class="sendingNews">
   <h3>Відправте нам новину</h3>
   <hr/>
-    <form action="/sendingNews" method="post" enctype="multipart/form-data">
+    <form action="{{ route('sendingNews')}}"  method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
           <label for="title">Назва</label><br/>
           <input class="inputText" id="title" name="title" type="text"></input>
