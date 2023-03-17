@@ -18,7 +18,7 @@ class Service
       $merch = new Merch();
       $photoMainName = $request->file('nameMainPhoto')->store('uploads','public');
       $photoName1 = $request->file('namePhoto1')->store('uploads','public');
-      $photoName2 = $request->file('namePhoto1')->store('uploads','public');
+      $photoName2 = $request->file('namePhoto2')->store('uploads','public');
   
       $merch->title= $request->input('title');
       $merch->describe= $request->input('describe');
