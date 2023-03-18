@@ -23,16 +23,15 @@ Route::prefix('merch')->controller(MerchController::class)->group(function () {
   Route::post('/buyMerch','order')->name('merch.order');
  });
 
+
 Route::prefix('merch')->controller(MerchController::class)->middleware(['admin'])->group(function () {
-  Route::get('/create', function ()
-  {return view('merch/create');})->name('merch.create');
+  Route::view('/create', 'merch/create')->name('merch.create');
   Route::post('/merch','store')->name('merch.store'); 
   Route::get('/showDestroy/{id}','showDestroy')->name('merchPage.destroy');
   Route::get('/destroy/{id}','destroy')->name('merch.destroy');
   Route::get('/edit/{id}','edit')->name('merch.edit');
   Route::post('/update/{id}','update')->name('merch.update');
 });
-
 
 Route::prefix('admins')->controller(AdminController::class)->middleware(['admin'])->group(function () {
   Route::get('/admin', 'submit')->name('admin.submit');
@@ -44,11 +43,10 @@ Route::controller(NewsController::class)->group(function () {
   Route::get('/newsBlockOne/{id}','submitOne')->name('newsBlockOne');
 });
 
-Route::get('/welcome', function ()
-{return view('welcome');})->name('welcome');
 
-Route::get('/sendingNews', function ()
-{ return view('sendingNews');})->name('sendingNews');
+Route::view('/welcome', 'welcome')->name('welcome');
+
+Route::view('/sendingNews', 'sendingNews')->name('sendingNews');
 
 Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit')->name('sendingNews');;
 
