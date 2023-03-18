@@ -11,11 +11,13 @@ class NewsController extends Controller
 {
     public function submit()
     {
-      return view('newsblock',['data'=>News::all()]);
+       $news=News::all();
+       return view('newsblock',compact('news'));
     }
     public function submitOne($id)
-    {
-     return view('newsblockOne',['data'=>News::find($id)]);
+    {      
+       $news=News::find($id);
+       return view('newsblockOne',compact('news'));
     }
  
 }

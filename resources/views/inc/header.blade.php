@@ -9,7 +9,7 @@
        
 
       @if (Auth::user()!=null && Auth::user()->admin)
-      <li><a href="{{ route('admin') }}">Адмінка</a></li>
+      <li><a href="{{ route('admin.submit') }}">Адмінка</a></li>
       <li><a  href="{{ route('sendingNews') }}">добавлення новини</a></li>
       <li ><a  href="{{ route('merch.create') }}">добавлення мерчу</a></li>  
       @endif

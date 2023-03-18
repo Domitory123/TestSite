@@ -3,18 +3,18 @@
 @section("newsblockOne") 
 
   <div class="blockOneNews">
-    <h1> {{$data->title}}</h1>
-    <div class="mainPhoto" id="divMainImg" style="background-image: url({{ asset('/storage/' . $data->nameMainPhoto) }});">
+    <h1> {{$news->title}}</h1>
+    <div class="mainPhoto" id="divMainImg" style="background-image: url({{ asset('/storage/' . $news->name_main_photo) }});">
 
     </div> 
      
-    <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $data->nameMainPhoto) }}"> 
-      <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $data->namePhoto1) }}"> 
-      <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $data->namePhoto2) }}"> 
-      
+      <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $news->name_main_photo) }}"> 
+      <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $news->name_photo_1) }}"> 
+      <img class="imgClass" onclick="clickImg(this)" src="{{ asset('/storage/'. $news->name_photo_2) }}"> 
+
                <div class="text">
                 
-                  <p>{{$data->text}}</p>
+                  <p>{{$news->text}}</p>
               
                </div>  
                <a href="\" >назад</a>

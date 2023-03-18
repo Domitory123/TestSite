@@ -15,7 +15,6 @@
            @enderror
          
        
-
           <label for="describe">Опис</label> <br/>
           <textarea name="describe" cols="28"  rows="5" >{{old('describe')}}</textarea> <br/>
           @error('describe')

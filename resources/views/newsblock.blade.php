@@ -4,19 +4,19 @@
 <div class="newsblockBasis">
 
     <div class="left">
-    @foreach($data as $d)
+    @foreach($news as $n)
          <div class="blockNews">
-              <div  class="photo" style=" background-image: url({{ asset('/storage/' . $d->nameMainPhoto) }});">
-                <!-- <img style="while:auto;  height:100%;" src="{{ asset('/storage/' . $d->namePhoto) }}">  -->
+              <div  class="photo" style=" background-image: url({{ asset('/storage/' . $n->name_main_photo) }});">
+                <!-- <img style="while:auto;  height:100%;" src="{{ asset('/storage/' . $n->namePhoto) }}">  -->
                </div>
-                   
+     
                <div  class="text">
                     <div class="textP">
-                        <p>{{$d->title}}</p>
-                        <p>{{$d->text}}</p>
+                        <p>{{$n->title}}</p>
+                        <p>{{$n->text}}</p>
                     </div> 
                     <div  class="textAButton">
-                        <a class="aButton" href="{{ route('newsBlockOne', $d->id)}}" >докладніше&rarr;</a>
+                        <a class="aButton" href="{{ route('newsBlockOne', $n->id)}}" >докладніше&rarr;</a>
                     </div>
                </div>  
          </div>

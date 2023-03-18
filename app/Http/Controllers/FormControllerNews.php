@@ -17,14 +17,13 @@ class FormControllerNews extends Controller
 
           $news->title=$request->input('title');
           $news->text=$request->input('text');
-          $news->conciseText=$request->input('conciseText');
-          $news->nameMainPhoto = $photoMainName;//$request->file('file')->getClientOriginalName();
-          $news->namePhoto1= $photoName1;
-          $news->namePhoto2= $photoName2;
+          $news->concise_text=$request->input('conciseText');
+          $news->name_main_photo = $photoMainName;//$request->file('file')->getClientOriginalName();
+          $news->name_photo_1= $photoName1;
+          $news->name_photo_2= $photoName2;
           $news->save();
 
           return view('welcome');
-      // return redirect()->route('');
      }
 
 }

@@ -3,14 +3,14 @@
 @section("newsblockOne") 
 
  <div class="blockOneNews">
-    <h1>Видалити  {{$data->title}} ?</h1>
-    <div class="mainPhoto" id="divMainImg" style="background-image: url({{ asset('/storage/' . $data->nameMainPhoto) }});">
+    <h1>Видалити  {{$merch->title}} ?</h1>
+    <div class="mainPhoto" id="divMainImg" style="background-image: url({{ asset('/storage/' . $merch->name_main_photo) }});">
     </div> 
 
     <div class="text"> 
                </div>  
                <a href="\" >назад</a>
-               <a href="{{route('merch.destroy',$data->id) }}" >видалити</a>
+               <a href="{{route('merch.destroy',$merch->id) }}" >видалити</a>
       </div>
   </div>
 </div>

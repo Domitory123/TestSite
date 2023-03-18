@@ -16,11 +16,11 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("conciseText");
+            $table->string("concise_text");
             $table->text("text");
-            $table->string("nameMainPhoto");
-            $table->string("namePhoto1");
-            $table->string("namePhoto2");
+            $table->string("name_main_photo");
+            $table->string("name_photo_1");
+            $table->string("name_photo_2");
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
             $table->softDeletes();

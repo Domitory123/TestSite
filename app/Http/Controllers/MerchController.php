@@ -22,16 +22,16 @@ class MerchController extends MyBaseController
 
   public function index(FilterRequest $request)
   {  
-    $data =  $request->validated();
-    $filter=  app()->make(MerchFilter::class,['queryParams'=>array_filter($data)]);
-    $Merch=Merch::filter($filter)->paginate(2);
-    return view('merch.index',compact('Merch'));
+    $data = $request->validated();
+    $filter = app()->make(MerchFilter::class,['queryParams'=>array_filter($data)]);
+    $merchs = Merch::filter($filter)->paginate(2);
+    return view('merch.index',compact('merchs'));
   }
 
   public function buy($id)
     {     
-       $data= Merch::findOrFail($id);
-       return view('merch.buy',compact('data'));
+      $merchs= Merch::findOrFail($id);
+       return view('merch.buy',compact('merchs'));
      }
 
      public function order(Request $request)
@@ -42,12 +42,14 @@ class MerchController extends MyBaseController
 
      public function show($id)
      {
-        return view('merch.show',['data'=>Merch::find($id)]);
+        $merch = Merch::find($id);
+        return view('merch.show',compact('merch'));
      }
 
      public function showDestroy($id)
      {
-        return view('merch\delete',['data'=>Merch::find($id)]);
+        $merch = Merch::find($id);
+        return view('merch.delete',compact('merch'));
      }
       
      public function destroy($id)
@@ -58,12 +60,13 @@ class MerchController extends MyBaseController
 
      public function edit($id)
      {
-        return view('merch\update',['Merch'=>Merch::find($id)]);
+        $merch = Merch::find($id);
+        return view('merch.update',compact('merch'));
      }
 
      public function update($id, Request $request)
      {
-        $data= $this->servce->update($id,$request);
-        return view('merch.show',compact('data')); 
+        $merch= $this->servce->update($id,$request);
+        return view('merch.show',compact('merch')); 
      }
 }

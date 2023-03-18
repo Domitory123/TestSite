@@ -9,12 +9,11 @@ class AdminController extends Controller
 {
      public function submit()
      {
-        return view('admin\admin');   
+        return view('admins.admin');   
      }
-     public function  adminOrder()
+     public function  order()
      {
-        return view('admin\adminOrder',['Order'=>Order::all()]);         
-     }
-
-
+        $orders = Order::all();
+        return view('admins.order',compact('orders'));  
+     }    
 }

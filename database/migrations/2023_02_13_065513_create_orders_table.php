@@ -16,12 +16,12 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table)
         {
             $table->id();
-            $table->string('nameUser');
+            $table->string('name_user');
             $table->string('email');
-            $table->string('deliveryAddress');
-            $table->string('phoneNumber');
+            $table->string('delivery_address');
+            $table->string('phone_number');
             $table->string('comment');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
 
             $table->bigInteger("merch_id");
@@ -30,7 +30,6 @@ class CreateOrdersTable extends Migration
            // $table->bigInteger("merch_id")->nullable();
            // $table->index("merch_id","orders_merch_idx");
            // $table->foreign("merch_id","orders_merch_fk")->on("merches")->references("id");
-
 
         });
     }
