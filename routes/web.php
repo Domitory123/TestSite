@@ -38,17 +38,16 @@ Route::prefix('admins')->controller(AdminController::class)->middleware(['admin'
   Route::get('/order', 'order')->name('admin.order');
  });
 
+
 Route::controller(NewsController::class)->group(function () {
-  Route::get('/','submit');
-  Route::get('/newsBlockOne/{id}','submitOne')->name('newsBlockOne');
+  Route::get('/','index');
+  Route::get('/newsBlockOne/{id}','show')->name('newsBlockOne');
+  Route::post('/sendingNews','store')->name('sendingNews');
+  Route::view('/sendingNews', 'sendingNews')->name('sendingNews');
 });
 
 
 Route::view('/welcome', 'welcome')->name('welcome');
-
-Route::view('/sendingNews', 'sendingNews')->name('sendingNews');
-
-Route::post('/sendingNews','App\Http\Controllers\FormControllerNews@submit')->name('sendingNews');;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
