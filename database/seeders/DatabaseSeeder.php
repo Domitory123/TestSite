@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Merch;
+use App\Models\Category;
+use App\Models\User;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,9 +16,11 @@ class DatabaseSeeder extends Seeder
     
     public function run()
     {
-        //App\Models\User::factory(1)->create();
-
+       
+       
+        User::factory(1)->create();
+        Category::factory(3)->create();
         Merch::factory(5)->create();
-      
+
     }
 }

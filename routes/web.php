@@ -25,7 +25,7 @@ Route::prefix('merch')->controller(MerchController::class)->group(function () {
 
 
 Route::prefix('merch')->controller(MerchController::class)->middleware(['admin'])->group(function () {
-  Route::view('/create', 'merch/create')->name('merch.create');
+  Route::get('/create','create')->name('merch.create');
   Route::post('/merch','store')->name('merch.store'); 
   Route::get('/showDestroy/{id}','showDestroy')->name('merchPage.destroy');
   Route::get('/destroy/{id}','destroy')->name('merch.destroy');

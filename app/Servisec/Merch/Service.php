@@ -19,6 +19,7 @@ class Service
       $merch = $this->updatePhoto($merch, $request);
       $merch->title= $request->input('title');
       $merch->describe= $request->input('describe');
+      $merch->сategory_id= $request->input('categore');
       $merch->save(); 
     }
 

@@ -22,15 +22,10 @@ class CreateOrdersTable extends Migration
             $table->string('phone_number');
             $table->string('comment');
             $table->string('status')->nullable();
-            $table->timestamps();
-
-            $table->bigInteger("merch_id");
-
+            $table->bigInteger("merch_id")->constrained();
+            
+            $table->timestamps();                
             $table->softDeletes();
-           // $table->bigInteger("merch_id")->nullable();
-           // $table->index("merch_id","orders_merch_idx");
-           // $table->foreign("merch_id","orders_merch_fk")->on("merches")->references("id");
-
         });
     }
 

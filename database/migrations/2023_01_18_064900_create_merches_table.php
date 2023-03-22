@@ -21,6 +21,7 @@ class CreateMerchesTable extends Migration
             $table->string("name_main_photo");
             $table->string("name_photo_1");
             $table->string("name_photo_2");
+            $table->bigInteger("сategory_id")->constrained("categories");
 
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();

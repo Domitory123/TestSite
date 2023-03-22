@@ -14,8 +14,8 @@
 
 
                <div class="text">
-          
                   <p>{{$merch->text}}</p>
+                  <p>{{$category->name}}</p>
                   
                </div>  
                   <a href="\" >назад</a>

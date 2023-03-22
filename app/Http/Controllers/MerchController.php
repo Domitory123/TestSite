@@ -10,6 +10,7 @@ use App\Http\Requests\Merch\FilterRequest;
 use App\Http\Filters\MerchFilter;
 use App\Http\Requests\Merch\MerchRequest;
 use App\Http\Controllers\MyBaseController;
+use App\Models\Category;
 
 class MerchController extends MyBaseController
 {
@@ -24,6 +25,7 @@ class MerchController extends MyBaseController
       $filter = app()->make(MerchFilter::class,['queryParams'=>array_filter($data)]);
       $merchs = Merch::filter($filter)->paginate(2);
       return view('merch.index',compact('merchs'));
+
     }
 
     /**
@@ -33,7 +35,8 @@ class MerchController extends MyBaseController
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('merch.create',compact('categories'));
     }
 
     /**
@@ -58,7 +61,8 @@ class MerchController extends MyBaseController
     public function show($id)
     {
         $merch = Merch::find($id);
-        return view('merch.show',compact('merch'));
+        $category = Category::find($merch->сategory_id);
+        return view('merch.show',compact('merch','category'));
     }
 
     /**

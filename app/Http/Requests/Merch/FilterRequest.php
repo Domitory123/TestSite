@@ -24,8 +24,9 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'string',
-            'describe'=>'string'
+            'title'=>'',
+            'describe'=>'string',
+            'sort'=>'',
         ];
     }
 }

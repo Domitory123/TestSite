@@ -11,12 +11,14 @@ class MerchFilter extends AbstractFilter
 
     public const TITLE = 'title';
     public const DESCRIBE = 'describe';
+    public const SORT = 'sort';
     
     protected function getCallbacks(): array
     {
         return [
             self::TITLE => [$this, 'title'],
             self::DESCRIBE => [$this, 'describe'],
+            self::SORT => [$this, 'sort'],
         ];
     }
 
@@ -30,5 +32,13 @@ class MerchFilter extends AbstractFilter
         $builder->where('describe', 'like', "%{$value}%");
     }
 
+    public function sort(Builder $builder, $value)
+    {
+        if ($value=="ascending")
+        $builder->orderByDesc('title')->get();
+           else
+        $builder->orderBy('title')->get();
+          
+    }
   
 }
