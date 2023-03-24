@@ -22,8 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone_number');
             $table->string('comment');
             $table->string('status')->nullable();
-            $table->bigInteger("merch_id")->constrained();
-            
+  
             $table->timestamps();                
             $table->softDeletes();
         });

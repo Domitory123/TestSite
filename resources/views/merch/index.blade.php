@@ -4,9 +4,15 @@
 
 <h1>Merch</h1>
 
-<form action="{{route('merch.index')}}" method="get" enctype="multipart/form-data">   
+<form action="{{route('merch.index')}}" method="get" enctype="multipart/form-data">
+<select name="categore">
+<option value="">всі</option>
+        @foreach($categories  as $categore)       
+          <option value="{{$categore->id}}">{{$categore->name}}</option>
+        @endforeach 
+         </select>
 <select name="sort">
-  <option value="">стандартно</option>
+  <option value="">всі</option>
   <option value="ascending">по зростанню</option>
   <option value="descending">по спаданню</option>
 </select>

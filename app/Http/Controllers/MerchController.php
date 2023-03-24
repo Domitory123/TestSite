@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Merch\FilterRequest;
 use App\Http\Filters\MerchFilter;
 use App\Http\Requests\Merch\MerchRequest;
-use App\Http\Controllers\MyBaseController;
 use App\Models\Category;
 
 class MerchController extends MyBaseController
@@ -24,8 +23,8 @@ class MerchController extends MyBaseController
       $data = $request->validated();
       $filter = app()->make(MerchFilter::class,['queryParams'=>array_filter($data)]);
       $merchs = Merch::filter($filter)->paginate(2);
-      return view('merch.index',compact('merchs'));
-
+      $categories = Category::all();
+      return view('merch.index',compact('merchs','categories'));
     }
 
     /**
@@ -74,7 +73,9 @@ class MerchController extends MyBaseController
     public function edit($id)
     {
         $merch = Merch::find($id);
-        return view('merch.update',compact('merch'));
+        $categories = Category::all();
+       // $merchCategore = Category::find($merch->сategory_id);
+        return view('merch.update',compact('merch','categories'));
     }
 
     /**
@@ -87,7 +88,8 @@ class MerchController extends MyBaseController
     public function update($id, Request $request)
     {
         $merch= $this->servce->update($id,$request);
-        return view('merch.show',compact('merch')); 
+        return redirect()->route('merch.index');  
+       //return view('merch.show',compact('merch')); 
     }
     
     /**

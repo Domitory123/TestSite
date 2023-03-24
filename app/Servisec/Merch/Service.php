@@ -26,14 +26,13 @@ class Service
     public function order(Request $request)
     {
       $data = $request->validate([
-        'merch_id' => '',
         'name_user' => 'string',
         'email' => 'email',
         'delivery_address' => 'string',
         'comment' => 'string',
         'phone_number' => 'string'
-    ]);
-         Order::create($data);  
+       ]);
+         Order::create($data)->merch()->attach($request->input('merch_id'));
     }
 
     public function destroy($id)
@@ -54,6 +53,7 @@ class Service
            $merch = $this->updatePhoto($merch, $request);
            $merch->title= $request->input('title');
            $merch->describe= $request->input('describe');
+           $merch->сategory_id=$request->input('categore');
            $merch->save();
            return $merch;
     }

@@ -7,6 +7,14 @@
   <hr/>
   <form action="{{route('merch.update',$merch->id)}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}	
+        <p>Категорія</p>
+       <select name="categore">
+              @foreach($categories  as $categore)
+              <option value="{{$categore->id}}" {{$merch->сategory_id===$categore->id ? 'selected' : ''}}> 
+              {{$categore->name}}</option>
+              @endforeach 
+       </select>
+         <br/>
           <label for="title">Назва</label><br/>
           <input class="inputText" id="title" name="title" type="text" value="{{$merch->title}}"></input>
           <br/>

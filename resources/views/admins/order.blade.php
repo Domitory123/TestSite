@@ -36,25 +36,32 @@
         @foreach($orders as $order)
 
             <tr >
-                <td>{{$order->merch_id}}</td>
+                <td>{{$order->id}}</td>
                 <td>{{$order->name_user}}</td>
                 <td>{{$order->email}}</td>   
                 <td>{{$order->delivery_address}}</td>
                 <td>{{$order->phone_number}}</td>
                 <td>{{$order->comment}}</td>
                 <td>{{$order->status}}</td>
-                <td>{{$order->merch->title}}</td>
-              
-                <td><img style=" height: 100px" src="{{ asset('/storage/'. $order->merch->name_main_photo) }}"> </td>
-
             </tr>
+            @foreach($order->merch as $merch)
+            <tr >
+                <td>{{$merch->id}}</td>
+                <td>{{$merch->title}}</td>
+                <td>{{$merch->category->name}}</td>
+                <td><img style=" height: 100px" src="{{ asset('/storage/'.$merch->name_main_photo) }}"> </td>
+               
+            </tr>
+            @endforeach
+
+
             @endforeach
         </tbody>
            
        </table>
               
+     
     
-                
                 
 
     

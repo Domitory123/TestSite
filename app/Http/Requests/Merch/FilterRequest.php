@@ -27,6 +27,7 @@ class FilterRequest extends FormRequest
             'title'=>'',
             'describe'=>'string',
             'sort'=>'',
+            'categore'=>'',  
         ];
     }
 }

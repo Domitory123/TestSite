@@ -6,6 +6,7 @@ use App\Http\Controllers\Merch;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MerchController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,12 @@ Route::prefix('merch')->controller(MerchController::class)->middleware(['admin']
 Route::prefix('admins')->controller(AdminController::class)->middleware(['admin'])->group(function () {
   Route::get('/admin', 'submit')->name('admin.submit');
   Route::get('/order', 'order')->name('admin.order');
+ });
+
+
+ Route::prefix('admins')->controller(CategoryController::class)->middleware(['admin'])->group(function () {
+  Route::get('/categories', 'index')->name('categories.index');
+
  });
 
 
