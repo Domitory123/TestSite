@@ -2,7 +2,7 @@
 <div class="menu">
     <ul class="main-menu">
         <li class="active"> <a href="\">Головна</a></li>
-        <li><a href="{{ route('welcome') }}">Новини</a></li>
+        <li><a href="{{ route('news.index') }}">Новини</a></li>
         <li><a href="{{ route('merch.index') }}">мерч&#11088;</a></li>
         <li><a href="#url">Фотогалерея</a></li>
         <li><a href="#url">Контакти</a></li>   
@@ -10,8 +10,8 @@
 
       @if (Auth::user()!=null && Auth::user()->admin)
       <li><a href="{{ route('admin.submit') }}">Адмінка</a></li>
-      <li><a  href="{{ route('sendingNews') }}">добавлення новини</a></li>
-      <li ><a  href="{{ route('merch.create') }}">добавлення мерчу</a></li>  
+      <li><a  href="{{ route('news.create') }}">добавлення новини</a></li>
+      <li><a  href="{{ route('merch.create') }}">добавлення мерчу</a></li>  
       @endif
 
         @guest

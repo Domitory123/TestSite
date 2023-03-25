@@ -10,7 +10,7 @@
     <div class="text"> 
                </div>  
                <a href="\" >назад</a>
-               <a href="{{route('merch.destroy',$merch->id) }}" >видалити</a>
+               <a href="{{route('merch.destroy',$merch) }}" >видалити</a>
       </div>
   </div>
 </div>

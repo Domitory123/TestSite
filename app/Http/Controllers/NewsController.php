@@ -15,7 +15,7 @@ class NewsController extends Controller
     public function index()
     {
         $news=News::all();
-        return view('newsblock',compact('news'));
+        return view('news/index',compact('news'));
     }
 
     /**
@@ -25,7 +25,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+         return view('news/create');
     }
 
     /**
@@ -57,10 +57,10 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(News  $news)
     {
-       $news=News::find($id);
-       return view('newsblockOne',compact('news'));
+       //$news=News::find($id);
+       return view('news.show',compact('news'));
     }
 
     /**

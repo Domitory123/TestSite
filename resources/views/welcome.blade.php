@@ -12,12 +12,7 @@
 
     <h3>редагування товару123  {{ __('Name') }}  </h3>
     <h3>редагування товару1  {{ Auth::user()->name }}  </h3>
-      <form action="/" method="post">
-      {{ csrf_field() }}	
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text"></input>
-        <input type="submit"></input>
-      </form>
+     
 
       @endif
 

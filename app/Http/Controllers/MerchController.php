@@ -57,11 +57,9 @@ class MerchController extends MyBaseController
      * @param  \App\Models\Merch  $merch
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Merch $merch)
     {
-        $merch = Merch::find($id);
-        $category = Category::find($merch->сategory_id);
-        return view('merch.show',compact('merch','category'));
+        return view('merch.show',compact('merch'));
     }
 
     /**
@@ -70,11 +68,9 @@ class MerchController extends MyBaseController
      * @param  \App\Models\Merch  $merch
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Merch $merch)
     {
-        $merch = Merch::find($id);
         $categories = Category::all();
-       // $merchCategore = Category::find($merch->сategory_id);
         return view('merch.update',compact('merch','categories'));
     }
 
@@ -85,9 +81,9 @@ class MerchController extends MyBaseController
      * @param  \App\Models\Merch  $merch
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request)
+    public function update(Merch $merch, Request $request)
     {
-        $merch= $this->servce->update($id,$request);
+        $this->servce->update($merch,$request);
         return redirect()->route('merch.index');  
        //return view('merch.show',compact('merch')); 
     }
@@ -98,24 +94,22 @@ class MerchController extends MyBaseController
      * @param  \App\Models\Merch  $merch
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Merch $merch)
     {
-       $this->servce->destroy($id);
+       $this->servce->destroy($merch);
        return redirect()->route('merch.index');
     }
 
-
-    public function showDestroy($id)
+    public function showDestroy(Merch $merch)
     {
-       $merch = Merch::find($id);
+      // $merch = Merch::find($id);
+     // $merch= Merch::findOrFail($id);
        return view('merch.delete',compact('merch'));
     }
 
-
-    public function buy($id)
+    public function buy(Merch $merch)
     {     
-      $merchs= Merch::findOrFail($id);
-      return view('merch.buy',compact('merchs'));
+      return view('merch.buy',compact('merch'));
     }
 
     public function order(Request $request)

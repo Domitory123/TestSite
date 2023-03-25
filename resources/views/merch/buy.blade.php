@@ -5,9 +5,9 @@
 <div class="sendingNews">
   <h3>Замовлення</h3>
  
-    <h1> {{$merchs->title}}</h1>
-    <div  style="height:500px;  background-image: url({{ asset('/storage/' . $merchs->name_main_photo) }});">
-     <img style=" height: 200px" src="{{ asset('/storage/'. $merchs->name_main_photo) }}"> 
+    <h1> {{$merch->title}}</h1>
+    <div  style="height:500px;  background-image: url({{ asset('/storage/' . $merch->name_main_photo) }});">
+     <img style=" height: 200px" src="{{ asset('/storage/'. $merch->name_main_photo) }}"> 
     </div> 
   <hr/>
     <form action="{{ route('merch.order') }}"  method="post" enctype="multipart/form-data">
@@ -33,7 +33,7 @@
           <label for="comment">Коментар до замовлення</label> <br/>
           <textarea name="comment" cols="28"  rows="5" ></textarea><br/>
          
-          <input style="display:none;" id="id" name="merch_id" type="text" value="{{$merchs->id}}" > </input>
+          <input style="display:none;" id="id" name="merch_id" type="text" value="{{$merch->id}}" > </input>
 
           <input  class="inputSubmit" type="submit" ></input>
     </form>

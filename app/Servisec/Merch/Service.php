@@ -32,30 +32,25 @@ class Service
         'comment' => 'string',
         'phone_number' => 'string'
        ]);
-         Order::create($data)->merch()->attach($request->input('merch_id'));
+       Order::create($data)->merch()->attach($request->input('merch_id'));
     }
 
-    public function destroy($id)
+    public function destroy(Merch $merch)
     {
-      $merch = Merch::find($id);
-       if($merch)
-       { 
-            unlink(public_path('storage\\'.$merch->name_main_photo));
-            unlink(public_path('storage\\'.$merch->name_photo_1));
-            unlink(public_path('storage\\'.$merch->name_photo_2));
-            Merch::find($id)->delete();  
-       }
+       unlink(public_path('storage\\'.$merch->name_main_photo));
+       unlink(public_path('storage\\'.$merch->name_photo_1));
+       unlink(public_path('storage\\'.$merch->name_photo_2));
+       $merch->delete();     
     }
 
-    public function update($id, Request $request)
+    public function update(Merch  $merch, Request $request)
     {
-           $merch = Merch::find($id);  
-           $merch = $this->updatePhoto($merch, $request);
-           $merch->title= $request->input('title');
-           $merch->describe= $request->input('describe');
-           $merch->сategory_id=$request->input('categore');
-           $merch->save();
-           return $merch;
+       $merch = $this->updatePhoto($merch, $request);
+       $merch->title= $request->input('title');
+       $merch->describe= $request->input('describe');
+       $merch->сategory_id=$request->input('categore');
+       $merch->save();
+       return $merch;
     }
 
     public function updatePhoto(Merch $merch, Request $request)

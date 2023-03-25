@@ -15,15 +15,15 @@
 
                <div class="text">
                   <p>{{$merch->text}}</p>
-                  <p>{{$category->name}}</p>
+                  <p>{{$merch->category->name}}</p>
                   
                </div>  
                   <a href="\" >назад</a>
-                  <a href="{{route('merch.buy',$merch->id)}}" >купити</a>
+                  <a href="{{route('merch.buy',$merch)}}" >купити</a>
 
                   @can('view',auth()->user()) 
-                     <a href="{{route('merchPage.destroy',$merch->id)}}">видалити</a>
-                     <a href="{{route('merch.edit',$merch->id)}}">редагувати</a>                    
+                     <a href="{{route('merchPage.destroy',$merch)}}">видалити</a>
+                     <a href="{{route('merch.edit',$merch)}}">редагувати</a>                    
                   @endcan        
                </div>
              
